@@ -68,24 +68,11 @@ class AdminBook(Book):
 
 
 class MyBook(Book):
-    class ReadStatus(models.TextChoices):
-        NOT_STARTED = 'not_started', 'Not Started'
-        IN_PROGRESS = 'in_progress', 'In Progress'
-        COMPLETED = 'completed', 'Completed'
 
     profile = models.ManyToManyField(
         Profile,
         related_name='my_books'
     )
-    is_favourite = models.BooleanField(
-        default=False,
-    )
-    read_status = models.CharField(
-        max_length=15,
-        choices=ReadStatus.choices,
-        default=ReadStatus.NOT_STARTED,
-    )
 
-    wish_list = models.BooleanField(
-        default=False,
-    )
+
+
