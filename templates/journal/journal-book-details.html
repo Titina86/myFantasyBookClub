@@ -1,0 +1,35 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+    <h1>Details for "{{ journal.book.title }}"</h1>
+
+<div class="journal-details">
+    <h2>Book Details</h2>
+    <p><strong>Book Title:</strong> {{ journal.book.title }}</p>
+    <p><strong>Author:</strong> {{ journal.book.author }}</p>
+    <p><strong>Characters:</strong> {{ journal.characters }}</p>
+    <p><strong>Favorite Character:</strong> {{ journal.favorite_character }}</p>
+
+    <h2>Reading Details</h2>
+    <p><strong>Start Date:</strong> {{ journal.start_date }}</p>
+    <p><strong>End Date:</strong> {{ journal.end_date }}</p>
+    <p><strong>Total Pages:</strong> {{ journal.pages }}</p>
+
+    <h2>Personal Notes</h2>
+    <p><strong>Favorite Moment:</strong> {{ journal.favorite_moment }}</p>
+    <p><strong>About:</strong> {{ journal.about }}</p>
+    <p><strong>Recommended By:</strong> {{ journal.recommended_by }}</p>
+    <p><strong>Quotes:</strong> {{ journal.quotes }}</p>
+    <p><strong>Will Recommend to a Friend:</strong> 
+        {% if journal.will_recommend_to_friend %}
+            Yes
+        {% else %}
+            No
+        {% endif %}
+    </p>
+</div>
+
+<a href="{% url 'journal-book-edit' %}">← Edit</a>
+<a href="{% url 'reading-journal-list' %}">← Back to My Journal</a>
+{% endblock %}

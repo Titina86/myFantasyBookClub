@@ -1,0 +1,16 @@
+<div class="section-monthly-books">
+    <h1>Monthly Books</h1>
+    
+    <div class="book-list">
+        {% for book in monthly_books %}
+             <a  href="{% url 'admin-book-details' book.pk %}" class="book">
+                <img src="{{ book.cover}}">
+                <h2>{{ book.title }}</h2>
+                <p><strong>Author:</strong> {{ book.author }}</p>
+                <p><strong>Published on:</strong> {{ book.monthly_book_date }}</p>
+            </a>
+        {% empty %}
+            <p>No books have been announced for this month yet.</p>
+        {% endfor %}
+    </div>
+</div>

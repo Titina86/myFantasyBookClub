@@ -1,0 +1,18 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div class="admin-book-details-container">
+    <div class="admin-book-cover">
+        <img src="{{ object.cover }}" alt="{{ object.title }} Cover">
+    </div>
+    <div class="admin-book-info">
+        <h1>{{ book.title }}</h1>
+        <p><strong>Author:</strong> {{ object.author }}</p>
+        <p><strong>Description:</strong> {{ object.description }}</p>
+        <p><strong>Published Date:</strong> {{ object.monthly_book_date }}</p>
+    </div>
+    <div class="back-link">
+        <a href="{% url 'home' %}">← Back to Monthly Books</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'common/base.html' %}
+ 
+{% block content %}
+<h1>My Books</h1>
+<a href="{% url 'add-book' %}" class="btn">Add Book</a>
+<ul>
+    
+    {% for book in books %}
+    <li>
+        <strong>{{ book.title }}</strong><br>
+        <em>{{ book.author }}</em><br>
+        <p>{{ book.description }}</p>
+        <a href="{% url 'edit_book' book.pk %}" class="btn">Edit</a>
+        <form method="POST" action="{% url 'delete_book' book.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </li>
+        
+    {% empty %}
+    <p>No books added yet.</p>
+    {% endfor %}
+    <a href="{% url 'profile-details' request.user.pk%}" class="btn-return-profile">Return to profile</a>
+</ul>
+{% endblock %}

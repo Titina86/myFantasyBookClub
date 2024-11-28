@@ -1,0 +1,22 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<div class="delete-container">
+    <h1>Delete Profile</h1>
+    <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+
+    <div class="sure-buttons">
+        <form method="POST" action="{% url 'profile-delete' profile.pk %}">
+        {% csrf_token %}
+            <button type="submit" class="btn-delete">Yes, Delete My Profile</button>
+        </form>
+        
+         
+         <a href="{% url 'profile-details' profile.pk %}" class="btn-cancel">Cancel</a>       
+                
+    </div>
+
+</div>
+
+{% endblock %}

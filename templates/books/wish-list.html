@@ -1,0 +1,27 @@
+{% extends 'common/base.html' %}
+ 
+{% block content %}
+<h1>My Wish List</h1>
+<a href="{% url 'add-book' %}" class="btn">Add Book</a>
+<a href="{% url 'profile-details' request.user.pk%}" class="btn-return-profile">Return to profile</a>
+<ul>
+    
+    {% for book in books %}
+
+    <li>
+        <strong>{{ book.title }}</strong><br>
+        <em>{{ book.author }}</em><br>
+        <p>{{ book.description }}</p>
+        
+        <form method="POST" action="{% url 'delete-from-wishlist' book.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-delete-wishlist">Delete from Wish List</button>
+        </form>
+    </li>
+
+    {% empty %}
+    <p>No books added yet.</p>
+    {% endfor %}
+</ul>
+    
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<h2>Create Reading Journal Entry</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<a href="{% url 'reading-journal-list' %}" class="btn btn-secondary">Back to Journal List</a>
+{% endblock %}

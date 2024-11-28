@@ -1,0 +1,22 @@
+{% extends 'common/base.html' %}
+{% load placeholder_filter %}
+
+{% block content %}
+    
+     <form method="post">
+          {% csrf_token %}
+                
+          {{ form.username|placeholder:"Username" }}
+          {{ form.username.errors }}
+                
+          {{ form.password1|placeholder:"Password" }}
+          {{ form.password1.errors }}
+                
+          {{ form.password2|placeholder:"Confirm Password" }}
+          {{ form.password2.errors }}
+
+                
+          <button type="submit">Register</button>
+     </form>
+    
+{% endblock %}

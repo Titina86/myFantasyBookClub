@@ -1,0 +1,15 @@
+<nav class="main-nav">
+    <ul>
+        {% if request.user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="button" type="submit"><i>Logout</i></button>
+        </form>
+        <li><a href="{% url 'profile-details' request.user.pk %}">Profile</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Log In</a></li>
+        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="#">Contact</a></li>
+        {% endif %}
+    </ul>
+</nav>

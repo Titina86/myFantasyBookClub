@@ -1,0 +1,25 @@
+{% extends 'common/base.html' %}
+{% load placeholder_filter %}
+
+{% block content %}
+<div class="login-div">
+    <div class="login-container">
+        <h1>Login</h1>
+        
+        <form class= form-login method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+                
+                {{ form.errors }}
+                {{ form.username|placeholder:"Username" }}
+                {{ form.password|placeholder:"Password" }}
+
+            
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+        
+        <p class="register-link">
+            Don't have an account? <a href="{% url 'register' %}">Register here</a>.
+        </p>
+    </div>
+</div>
+{% endblock %}

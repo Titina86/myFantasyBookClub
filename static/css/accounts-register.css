@@ -1,0 +1,84 @@
+.register-div {
+    background: #f8a8c3;
+
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 34px;
+    color: #462c37;
+}
+
+.form-container-register {
+    background-image: url('/static/images/pinkGate.jpg');
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 50px auto;
+
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    margin-left: 125px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+button {
+    background-color: #6db0f4;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #5e6b8e;
+}
+
+.error {
+    color: #824d6b;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

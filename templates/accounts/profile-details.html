@@ -1,0 +1,32 @@
+{% extends 'common/base.html' %}
+{% load placeholder_filter %}
+
+{% block content %}
+
+    <div class="profile-container">
+    <h2>Profile</h2>
+    
+    
+    <div class="profile-info">
+        <p><strong>Full Name:</strong> {{ profile.get_full_name }}</p>
+        <p><strong>Email:</strong> {{ profile.email }}</p>
+        
+        {% if profile.profile_picture %}
+        <div class="profile-picture">
+            <strong>Profile Picture:</strong>
+            <img src="{{ profile.profile_picture }}" alt="Profile Picture" class="profile-img">
+        </div>
+        {% else %}
+        <p><strong>Profile Picture:</strong> No profile picture set</p>
+        {% endif %}
+    </div>
+    
+    <a href="{% url 'profile-edit' request.user.pk %}" class="btn-edit-profile">Edit Profile</a>
+    <a href="{% url 'profile-delete' request.user.pk %}" class="btn-delete-profile">Delete Profile</a>
+</div>
+    
+    <a href='{% url 'my-books' %}' class="my-books-list">My Book List</a>
+    <a href='{% url 'wish-list' %}' class="my-books-list">Wish List</a>
+    <a href='{% url 'reading-journal-list' %}' class="reading-journal-list">Reading Journal</a>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'common/base.html' %}
+{% load placeholder_filter %}
+
+{% block content %}
+<div class="register-div">
+<div class="form-container-register">
+    <h2>Register</h2>
+    <form method="POST" enctype="multipart/form-data" class="form-register">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            {{ form.user_form.username|placeholder:"Username" }}
+            {% for error in form.user_form.username.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        
+        <div class="form-group">
+            {{ form.user_form.password1|placeholder:'Password' }}
+            {% for error in form.user_form.password1.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        
+        <div class="form-group">
+            {{ form.user_form.password2|placeholder:'Repeat password' }}
+            {% for error in form.user_form.password2.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        
+        <div class="form-group">
+            {{ form.profile_form.first_name|placeholder:'First Name' }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.profile_form.last_name|placeholder:'Last Name' }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.profile_form.email|placeholder:'Email' }}
+            {% for error in form.profile_form.email.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        
+        <div class="form-group">
+            {{ form.profile_form.profile_picture|placeholder:'Picture' }}
+        </div>
+        
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>
+</div>
+{% endblock %}
