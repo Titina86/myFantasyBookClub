@@ -1,13 +1,15 @@
 {% extends 'common/base.html' %}
  
 {% block content %}
-<h1>{{ action }}</h1>
-<form method="POST">
+<h2>Add a Book</h2>
+
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn">{{ action }}</button>
+    <button type="submit">Add Book</button>
 </form>
-<a href="{% url 'my-books' %}" class="btn">Back to My Books</a>
+
+<a href="{% url 'my-books' %}">Back to My Books</a>
 {% endblock %}
  
 

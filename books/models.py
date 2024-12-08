@@ -68,11 +68,7 @@ class AdminBook(Book):
 
 
 class MyBook(Book):
-
-    profile = models.ManyToManyField(
-        Profile,
-        related_name='my_books'
-    )
+    pass
 
 
 

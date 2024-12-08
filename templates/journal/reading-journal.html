@@ -1,28 +1,33 @@
 {% extends 'common/base.html' %}
 
-{% block content %}
-<h1>My Reading Journal</h1>
 
-{% for journal in journals %}
-        <ul>
-            <li><a href="{% url 'journal-book-details' journal.pk %}">{{ journal.book }}</a></li>
-            
-        </ul>
-        {% empty %}
-        <tr>
-            <td colspan="4">No books in your journal yet.</td>
-        </tr>
-        {% endfor %}
+{% block content %}
+<div class="container">
+    <h1>Books with Journals</h1>
     
-<h2>Add a Book to Your Journal</h2>
-<form method="post">
-    {% csrf_token %}
-    <label for="book_id">Choose a book:</label>
-    <select name="book_id" id="book_id">
-        {% for book in user_books %}
-        <option value="{{ book.id }}">{{ book.title }}</option>
+    {% if journals %}
+    <ul class="book-list">
+    
+        {% for book in journals %}
+        <li>
+            {{ book.pk }}
+            <h2>{{ book.books_list.book.title }}</h2>
+            <p><strong>Author:</strong> {{ book.books_list.book.author}}</p>
+            <a href="{% url 'journal-book-details' book.pk %}" class="btn btn-primary">View Journal</a>
+            <a href="{% url 'journal-book-delete' book.pk %}" class="btn btn-primary">Delete Book from Journal</a>
+        </li>
         {% endfor %}
-    </select>
-    <button type="submit">Add to Journal</button>
-</form>
+    </ul>
+    {% else %}
+    <p>No books with journals found.</p>
+    {% endif %}
+</div>
+    
+    <h3>Add a Book to Your Wish List</h3>
+    <form method="post" action="{% url 'journal-add' %}">
+        {% csrf_token %}
+
+
+        <button type="submit" class="btn btn-primary mt-3">Add </button>
+    </form>
 {% endblock %}

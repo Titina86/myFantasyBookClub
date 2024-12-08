@@ -1,24 +1,16 @@
 from django.db import models
 from django.conf import settings
 
-from accounts.models import Profile
-from books.models import MyBook
+
+from booksList.models import BooksList
 
 
 class ReadingJournal(models.Model):
-
-    user = models.ForeignKey(
-        to=Profile,
+    books_list = models.ForeignKey(
+        to=BooksList,
         on_delete=models.CASCADE,
-        related_name='reading_journal'
-    )
-
-    book = models.OneToOneField(
-        to=MyBook,
-        on_delete=models.CASCADE,
-        max_length=255,
-        related_name="my_book",
-        verbose_name='Book'
+        related_name="reading_journal",
+        verbose_name="Books List Entry",
     )
 
     characters = models.TextField(

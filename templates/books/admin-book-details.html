@@ -6,11 +6,29 @@
         <img src="{{ object.cover }}" alt="{{ object.title }} Cover">
     </div>
     <div class="admin-book-info">
-        <h1>{{ book.title }}</h1>
+        <h1>{{ object.title }}</h1>
+        
         <p><strong>Author:</strong> {{ object.author }}</p>
         <p><strong>Description:</strong> {{ object.description }}</p>
         <p><strong>Published Date:</strong> {{ object.monthly_book_date }}</p>
+        
+    </div >
+    <div class="admin-book-comments">
+    {% for comment in comments %}
+            <div class="comments">
+                {{ comment.text }}
+                {{ comment.date_time_of_publication }}
+            </div>
+            <!-- End Comments Section -->
+        {% endfor %}
     </div>
+    <div class="admin-book-add-comment">
+    <form method="post" action="{% url 'comment' object.pk %}">
+        {% csrf_token %}
+        {{ comment_form }}
+        <button>Post</button>
+    </form>
+    </div>    
     <div class="back-link">
         <a href="{% url 'home' %}">← Back to Monthly Books</a>
     </div>

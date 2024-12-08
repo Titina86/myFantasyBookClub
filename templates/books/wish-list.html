@@ -2,21 +2,21 @@
  
 {% block content %}
 <h1>My Wish List</h1>
-<a href="{% url 'wish-list-add' %}" class="btn">Add Book</a>
+
 <a href="{% url 'profile-details' request.user.pk%}" class="btn-return-profile">Return to profile</a>
 <ul>
     
-    {% for book in books %}
+    {% for book in wish_list_books %}
 
     <li>
-        <strong>{{ book.title }}</strong><br>
-        <em>{{ book.author }}</em><br>
-        <p>{{ book.description }}</p>
+        <strong>{{ book.book.title }}</strong><br>
+        <em>{{ book.book.author }}</em><br>
         
-        <form method="POST" action="{% url 'delete-from-wishlist' book.pk %}" style="display:inline;">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-delete-wishlist">Delete from Wish List</button>
-        </form>
+        
+{#        <form method="POST" action="{% url 'delete-from-wishlist' book.pk %}" style="display:inline;">#}
+{#            {% csrf_token %}#}
+{#            <button type="submit" class="btn btn-delete-wishlist">Delete from Wish List</button>#}
+{#        </form>#}
     </li>
 
     {% empty %}

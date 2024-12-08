@@ -2,12 +2,12 @@
 
 {% block content %}
 
-    <h1>Details for "{{ journal.book.title }}"</h1>
+    <h1>Details for "{{ journal.books_list.book.title }}"</h1>
 
 <div class="journal-details">
     <h2>Book Details</h2>
-    <p><strong>Book Title:</strong> {{ journal.book.title }}</p>
-    <p><strong>Author:</strong> {{ journal.book.author }}</p>
+    <p><strong>Book Title:</strong> {{ journal.books_list.book.title  }}</p>
+    <p><strong>Author:</strong> {{ journal.books_list.book.author }}</p>
     <p><strong>Characters:</strong> {{ journal.characters }}</p>
     <p><strong>Favorite Character:</strong> {{ journal.favorite_character }}</p>
 
@@ -30,6 +30,6 @@
     </p>
 </div>
 
-<a href="{% url 'journal-book-edit' %}">← Edit</a>
-<a href="{% url 'reading-journal-list' %}">← Back to My Journal</a>
+<a href="{% url 'journal-book-edit' journal.pk %}">← Edit</a>
+<a href="{% url 'reading-journal' %}">← Back to My Journal</a>
 {% endblock %}
