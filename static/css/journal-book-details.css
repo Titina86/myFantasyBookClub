@@ -1,0 +1,101 @@
+h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Journal Details Container */
+.journal-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections Styling */
+.journal-book-details, .journal-reading-details, .journal-personal-notes {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.journal-book-details {
+    background-color: #fff7ac;
+}.journal-reading-details {
+    background-color: #e7c15c ;
+}
+ .journal-personal-notes {
+    background-color:#d08e5e ;
+}
+
+.journal-book-details p,
+.journal-reading-details p,
+.journal-personal-notes p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.journal-details h2 {
+    color: black;
+    border-bottom: 2px solid black;
+}
+/* Highlighted Fields */
+strong {
+    color: #555;
+}
+
+/* Favorite Fields Styling */
+.journal-personal-notes p strong {
+    color: black;
+}
+
+/* Links Styling */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+a + a {
+    margin-left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .journal-details {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}

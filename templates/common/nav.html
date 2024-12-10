@@ -1,10 +1,12 @@
 <nav class="main-nav">
     <ul>
         {% if request.user.is_authenticated %}
-        <form method="post" action="{% url 'logout' %}">
+            <li>
+        <form method="post" action="{% url 'logout' %}" class="form-nav-logout">
             {% csrf_token %}
-            <button class="button" type="submit"><i>Logout</i></button>
+            <button class="button-logout" type="submit" ><i>Logout</i></button>
         </form>
+          </li>
         <li><a href="{% url 'profile-details' request.user.pk %}">Profile</a></li>
         {% else %}
         <li><a href="{% url 'login' %}">Log In</a></li>

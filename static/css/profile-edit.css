@@ -1,0 +1,99 @@
+/* Edit Profile Container */
+.background-edit-profile {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #438ab4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.background-edit-profile h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="file"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Buttons */
+.btn-save-edit-profile,
+.btn-cancel-edit-profile {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.btn-save-edit-profile {
+    background-color: #a0c4eb;
+}
+
+.btn-save-edit-profile:hover {
+    background-color: #7eade1;
+}
+
+.btn-cancel-edit-profile {
+    background-color: #e74c3c;
+    text-decoration: none;
+    line-height: 40px; /* Aligns text vertically */
+}
+
+.btn-cancel-edit-profile:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .background-edit-profile {
+        padding: 15px;
+    }
+
+    .btn-save-edit-profile,
+    .btn-cancel-edit-profile {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

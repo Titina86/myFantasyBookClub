@@ -13,17 +13,6 @@ from accounts.models import Profile
 UserModel = get_user_model()
 
 
-# class AppUserRegisterView(CreateView):
-#     model = UserModel
-#     form_class = AppUserCreationForm
-#     template_name = 'accounts/register-page.html'
-#     success_url = reverse_lazy('login')
-#
-#     def form_valid(self, form):
-#         response = super().form_valid(form)
-#         login(self.request, self.object)
-#         return response
-
 def register(request):
     if request.method == 'POST':
         form = CombinedRegistrationForm(request.POST, request.FILES)
@@ -48,6 +37,7 @@ class AppUserLoginView(LoginView):
 class ProfileDetailsView(LoginRequiredMixin, DetailView):
     model = Profile
     template_name = 'accounts/profile-details.html'
+    context_object_name = 'profile'
 
 
 class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

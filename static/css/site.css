@@ -1,7 +1,7 @@
 @import url(reset.css);
 
 @import url(home-page.css);
-
+@import url(section-header.css);
 @import url(accounts-login.css);
 
 @import url(accounts-register.css);
@@ -11,3 +11,8 @@
 @import url(section-monthly-books.css);
 
 @import url(admin-book-details.css);
+@import url(my-list-books.css);
+@import url(profile-edit.css);
+@import url(journal-book-details.css);
+@import url(list-book-edit.css);
+@import url(my-book-details.css);

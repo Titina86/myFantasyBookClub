@@ -2,33 +2,49 @@
 
 {% block content %}
 <div class="admin-book-details-container">
+    <!-- Book Details Section -->
     <div class="admin-book-cover">
         <img src="{{ object.cover }}" alt="{{ object.title }} Cover">
     </div>
     <div class="admin-book-info">
         <h1>{{ object.title }}</h1>
-        
         <p><strong>Author:</strong> {{ object.author }}</p>
         <p><strong>Description:</strong> {{ object.description }}</p>
         <p><strong>Published Date:</strong> {{ object.monthly_book_date }}</p>
-        
-    </div >
-    <div class="admin-book-comments">
-    {% for comment in comments %}
-            <div class="comments">
-                {{ comment.text }}
-                {{ comment.date_time_of_publication }}
+    </div>
+    
+    <!-- Comments Section -->
+    <div class="admin-book-comments-section">
+        <h2>Comments</h2>
+        {% for comment in comments %}
+            <div class="comment">
+                <p>{{ comment.text }}</p>
+                <img src="{{ comment.profile.profile_picture }}">
+                <span class="comment-date">{{ comment.date_time_of_publication }}</span>
+                <span class="comment-date">{{ comment.profile.get_full_name }}</span>
+            {% if not comment.approved %}
+                <form method="post" action="{% url 'approve-comment' comment.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-approve">Approve</button>
+                </form>
+            {% endif %}
             </div>
-            <!-- End Comments Section -->
+        {% empty %}
+            <p>No comments yet. Be the first to comment!</p>
         {% endfor %}
     </div>
+
+    <!-- Add Comment Form -->
     <div class="admin-book-add-comment">
-    <form method="post" action="{% url 'comment' object.pk %}">
-        {% csrf_token %}
-        {{ comment_form }}
-        <button>Post</button>
-    </form>
-    </div>    
+        <h2>Add a Comment</h2>
+        <form method="post" action="{% url 'comment' object.pk %}">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="btn-post-comment">Post</button>
+        </form>
+    </div>
+
+    <!-- Back Link -->
     <div class="back-link">
         <a href="{% url 'home' %}">← Back to Monthly Books</a>
     </div>

@@ -1,0 +1,96 @@
+.book-details {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #add187;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Title styling */
+.book-details h1,
+.book-details h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Image styling */
+.book-image img {
+    width: 50%;
+    /*display: block;*/
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Description and text elements */
+.book-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.book-details strong {
+    font-weight: bold;
+    color: #34495e;
+}
+
+/* Highlighted section */
+.book-details h3 {
+    color: #27ae60;
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .book-details {
+        padding: 15px;
+    }
+
+    .book-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

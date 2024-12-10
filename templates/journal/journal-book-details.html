@@ -5,17 +5,22 @@
     <h1>Details for "{{ journal.books_list.book.title }}"</h1>
 
 <div class="journal-details">
+    <div class="journal-book-details">
     <h2>Book Details</h2>
     <p><strong>Book Title:</strong> {{ journal.books_list.book.title  }}</p>
     <p><strong>Author:</strong> {{ journal.books_list.book.author }}</p>
     <p><strong>Characters:</strong> {{ journal.characters }}</p>
     <p><strong>Favorite Character:</strong> {{ journal.favorite_character }}</p>
+    </div>
 
+    <div class="journal-reading-details">
     <h2>Reading Details</h2>
     <p><strong>Start Date:</strong> {{ journal.start_date }}</p>
     <p><strong>End Date:</strong> {{ journal.end_date }}</p>
     <p><strong>Total Pages:</strong> {{ journal.pages }}</p>
+    </div>
 
+    <div class="journal-personal-notes">
     <h2>Personal Notes</h2>
     <p><strong>Favorite Moment:</strong> {{ journal.favorite_moment }}</p>
     <p><strong>About:</strong> {{ journal.about }}</p>
@@ -28,8 +33,9 @@
             No
         {% endif %}
     </p>
+    </div>
 </div>
 
-<a href="{% url 'journal-book-edit' journal.pk %}">← Edit</a>
-<a href="{% url 'reading-journal' %}">← Back to My Journal</a>
+<a href="{% url 'journal-book-edit' journal.pk %}"> Edit</a>
+<a href="{% url 'reading-journal' %}"> Back to My Journal</a>
 {% endblock %}

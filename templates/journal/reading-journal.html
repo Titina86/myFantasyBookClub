@@ -6,15 +6,20 @@
     <h1>Books with Journals</h1>
     
     {% if journals %}
-    <ul class="book-list">
+    <ul class="ul-book-list-info">
     
         {% for book in journals %}
-        <li>
-            {{ book.pk }}
+        <li class="book-info-list">
+            <div class="book-list-book-cover">
+            <img src="{{ ook.books_list.book.cover }}" alt="Book Cover">
+            
+            </div>
+            <div class="book-list-book-info">
             <h2>{{ book.books_list.book.title }}</h2>
             <p><strong>Author:</strong> {{ book.books_list.book.author}}</p>
-            <a href="{% url 'journal-book-details' book.pk %}" class="btn btn-primary">View Journal</a>
-            <a href="{% url 'journal-book-delete' book.pk %}" class="btn btn-primary">Delete Book from Journal</a>
+            <a href="{% url 'journal-book-details' book.pk %}" class="btn-edit-book-from-list">View Journal</a>
+            <a href="{% url 'journal-book-delete' book.pk %}" class="btn btn-danger">Delete Book from Journal</a>
+            </div>    
         </li>
         {% endfor %}
     </ul>
@@ -23,7 +28,7 @@
     {% endif %}
 </div>
     
-    <h3>Add a Book to Your Wish List</h3>
+    <h3>Add a Book to Your Reading Journal</h3>
     <form method="post" action="{% url 'journal-add' %}">
         {% csrf_token %}
 

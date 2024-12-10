@@ -44,7 +44,8 @@ class Profile(models.Model):
         max_length=20,
     )
     email = models.EmailField(
-        unique=True,
+        null=True,
+        blank=True,
     )
     profile_picture = models.URLField(
         blank=True,

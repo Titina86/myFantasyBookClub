@@ -49,6 +49,7 @@ class EditBookForm(forms.Form):
     description = forms.CharField(
         widget=forms.Textarea(attrs={'rows': 4, 'cols': 40}), required=False, label="Description"
     )
+    cover = forms.URLField()
 
     # Field for editing BooksList model (read_status)
     read_status = forms.ChoiceField(
@@ -68,6 +69,7 @@ class EditBookForm(forms.Form):
             self.fields['title'].initial = self.book.title
             self.fields['author'].initial = self.book.author
             self.fields['description'].initial = self.book.description
+            self.fields['cover'].initial = self.book.cover
             self.fields['read_status'].initial = self.book.my_list_book.get(profile=self.profile).read_status
 
     def save(self):
@@ -75,6 +77,7 @@ class EditBookForm(forms.Form):
         self.book.title = self.cleaned_data['title']
         self.book.author = self.cleaned_data['author']
         self.book.description = self.cleaned_data['description']
+        self.book.cover = self.cleaned_data['cover']
         self.book.save()
 
         # Save changes to the BooksList model (read_status)

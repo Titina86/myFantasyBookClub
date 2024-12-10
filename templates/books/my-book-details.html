@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+  
+    <div class="container">
+        <h1>Book Details</h1>
+        
+        <div class="book-details">
+            <h2>{{ book.title }}</h2>
+        
+            <p class="book-image"><strong>Cover:</strong> <img src="{{ book.cover }}" alt="{{ book_list_entry.book.title }} Cover" width="200"></p>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Description:</strong> {{ book.description }}</p>
+            
+            
+            <h3>Read Status: {{ book_list_entry.get_read_status_display }}</h3>
+            <p><strong>Journal Entry:</strong> {% if book_list_entry.have_journal %} Yes {% else %} No {% endif %}</p>
+           
+            <a href="{% url 'my-books' %}" class="btn btn-secondary">Back to My Books</a>
+        </div>
+    </div>
+    
+{% endblock %}

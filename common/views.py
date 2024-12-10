@@ -1,9 +1,10 @@
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required, permission_required
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import DetailView
 
 from books.models import AdminBook
 from common.forms import CommentForm
+from common.models import Comment
 
 
 def home_page(request):
@@ -11,6 +12,15 @@ def home_page(request):
     context = {'monthly_books': monthly_books}
 
     return render(request, 'common/index.html', context)
+
+
+@permission_required('common.can_approve_comments', raise_exception=True)
+def approve_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if not comment.approved:
+        comment.approved = True
+        comment.save()
+    return redirect('admin-book-details', pk=comment.to_book.id)
 
 
 class AdminBookDetailsView(DetailView):
@@ -21,8 +31,10 @@ class AdminBookDetailsView(DetailView):
         context = super().get_context_data(**kwargs)
 
         context['comment_form'] = CommentForm()
-        context['comments']= self.object.comment_set.all()
-
+        if self.request.user.has_perm('common.can_approve_comments'):
+            context['comments'] = self.object.comment_set.all()
+        else:
+            context['comments'] = self.object.comment_set.filter(approved=True)
         return context
 
 

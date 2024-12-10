@@ -1,0 +1,121 @@
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.btn-edit-book-from-list {
+    background-color: #7e7822;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+.btn-details-book-from-list {
+    background-color: #7e7822;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+.btn-book-delete {
+    background-color: indianred;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+.btn-add-book-to-list {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    background-color: #7e7822;
+}
+
+.btn-add-book-to-list:hover {
+    background-color: #218838;
+}
+
+.btn-return-profile {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #74b6a8;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn-return-profile:hover {
+    background-color: #5a6268;
+}
+
+/* Book List Styles */
+.ul-book-list-info {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.book-info-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #e1c564;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.book-info-list:hover {
+    transform: scale(1.02);
+}
+
+.book-list-book-cover {
+    flex: 0 0 100px;
+    margin-right: 20px;
+}
+
+.book-list-book-cover img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.book-list-book-info {
+    flex: 1;
+}
+
+.book-list-book-info strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.book-list-book-info em {
+    font-size: 1rem;
+    color: #666;
+}
+
+.book-list-book-info p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Empty State */
+.no-books {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    padding: 20px;
+}

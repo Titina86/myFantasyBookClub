@@ -1,0 +1,122 @@
+/* Container Styles */
+.container-list-book-edit {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+.container-list-book-edit h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Form Styles */
+.form-list-book-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input and Textarea Styles */
+.form-list-book-edit input[type="text"],
+.form-list-book-edit input[type="url"],
+.form-list-book-edit textarea,
+.form-list-book-edit select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-list-book-edit input[type="text"]:focus,
+.form-list-book-edit input[type="url"]:focus,
+.form-list-book-edit textarea:focus,
+.form-list-book-edit select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Label Styles */
+.form-list-book-edit label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Radio Button Styles */
+.form-list-book-edit .radio-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.form-list-book-edit .radio-buttons label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+}
+
+/* Button Styles */
+.form-list-book-edit button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-list-book-edit button:hover {
+    background-color: #0056b3;
+}
+
+/* Secondary Button (Cancel) */
+.form-list-book-edit .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.form-list-book-edit .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Message Styles */
+.messages {
+    margin-top: 20px;
+}
+
+.messages .alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.messages .alert-success {
+    background-color: #28a745;
+}
+
+.messages .alert-error {
+    background-color: #dc3545;
+}

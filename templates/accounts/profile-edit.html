@@ -2,12 +2,13 @@
 {% load placeholder_filter %}
 
 {% block content %}
+    <div class="background-edit-profile">
     <h1>Edit Profile</h1>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" class="form-edit-profile">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Save Changes</button>
+            <button type="submit" class="btn-save-edit-profile">Save Changes</button>
         </form>
-    <a href="{% url 'profile-details' request.user.pk %}">Cancel</a>
-
+    <a href="{% url 'profile-details' request.user.pk %}" class="btn-cancel-edit-profile">Cancel</a>
+    </div>
 {% endblock %}

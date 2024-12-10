@@ -6,9 +6,9 @@ from books.models import MyBook
 
 class BooksList(models.Model):
     class ReadStatus(models.TextChoices):
-        WISH_LIST = 'wish_list', 'Wish List'
-        IN_PROGRESS = 'in_progress', 'In Progress'
-        COMPLETED = 'completed', 'Completed'
+        WISH_LIST = 'Wish List', 'Wish List'
+        IN_PROGRESS = 'In Progress', 'In Progress'
+        COMPLETED = 'Completed', 'Completed'
 
     profile = models.ForeignKey(
         Profile,

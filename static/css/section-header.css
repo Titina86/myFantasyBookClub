@@ -1,24 +1,76 @@
-body {
-    min-height: 100vh;
-}
-
+/* Общи стилове за навигацията */
 .section-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 5em;
+    padding: 1em 3em;
+    background-color: #2c3e50;
+    color: #ecf0f1;
 }
 
-.main-nav ul{
-   display: flex;
-   gap: 2.5em;
-}
-.main-nav li,
-.main-nav a {
-    display: block;
+main-nav li:first-child {
+    margin: 0;
 }
 
-.main-nav a{
-    color: black;
+/* Списъкът в навигацията */
+.section-header .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1em; /* Разстояние между бутоните */
+}
+
+/* Линкове и бутони в навигацията */
+.section-header .main-nav a,
+.section-header .button-logout {
+    display: inline-block;
     text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ecf0f1;
+    background-color: transparent;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Ховър ефекти */
+.section-header .main-nav a:hover,
+.section-header .main-nav button:hover {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+/* Специално за бутона Logout */
+.section-header .main-nav button {
+    font: inherit; /* Наследява стила на текста */
+    border: none; /* Премахва стандартната рамка */
+    background-color: transparent;
+    padding: 10px 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+}
+
+/* Отговорен дизайн */
+@media screen and (max-width: 600px) {
+    .section-header {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .section-header .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .section-header .main-nav a,
+    .section-header .main-nav button {
+        width: 100%;
+        text-align: center;
+    }
 }

@@ -12,6 +12,8 @@ class Comment(models.Model):
         ]
         ordering = ['-date_time_of_publication']
 
+        permissions = [('can_approve_comments', 'Can approve comments'),]
+
     text = models.TextField(
         max_length=300,
     )
@@ -29,3 +31,9 @@ class Comment(models.Model):
         to=Profile,
         on_delete=models.CASCADE,
     )
+
+    approved = models.BooleanField(
+        default=False,
+    )
+
+

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView, FormView, View
+from django.views.generic import ListView, CreateView, UpdateView, FormView, View, DetailView
 
 from books.models import MyBook
 from booksList.forms import BooksListAddForm, EditBookForm
@@ -26,7 +26,7 @@ class AddBookView(LoginRequiredMixin, FormView):
         form.save(profile=self.request.user.profile)
 
         # After saving, redirect to the user's book list or another page
-        return redirect('my-books')  # Adjust the redirect URL
+        return redirect('my-books')
 
     def form_invalid(self, form):
         # If the form is invalid, re-render the form with errors
@@ -58,6 +58,20 @@ class EditBookView(LoginRequiredMixin, View):
 
         # If form is invalid, re-render the page with the errors
         return render(request, self.template_name, {'form': form, 'book': book})
+
+
+def detail_book(request, pk):
+    book = MyBook.objects.get(pk=pk)
+    profile = request.user.profile
+    book_list_entry = BooksList.objects.get(book=book, profile=profile)
+
+    context = {
+        'book': book,
+        'book_list_entry': book_list_entry,
+        'profile': profile
+    }
+
+    return render(request, 'books/my-book-details.html', context)
 
 
 class DeleteBookFromListView(View):

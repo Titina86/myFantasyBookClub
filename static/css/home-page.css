@@ -23,9 +23,7 @@ img {
     opacity: 1;
 }
 
-.section-header {
-    position: relative;
-}
+
 
 .banner-title{
     font-family: Cormorant Infant;
@@ -42,27 +40,17 @@ img {
     text-align: center;
     padding-bottom: 8em;
 }
+/*.section-header {*/
+/*    position: relative;*/
+/*}*/
+/*.section-header {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    padding: 2em 5em;*/
+/*}*/
 
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2em 5em;
-}
 
-.main-nav ul{
-   display: flex;
-   gap: 2.5em;
-}
-.main-nav li,
-.main-nav a {
-    display: block;
-}
-
-.main-nav a{
-    color: black;
-    text-decoration: none;
-}
 
 .footer {
     display: flex;

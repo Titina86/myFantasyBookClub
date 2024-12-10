@@ -1,50 +1,121 @@
+/* Profile container */
+
+.background-profile-details {
+    background-image: url('/static/images/th.jpg');
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    height: 50vh; /* Full viewport height, adjust as needed */
+    width: 100%;
+}
 .profile-container {
-    width: 60%;
-    margin: 50px auto;
+    max-width: 800px;
+    margin: 30px auto;
     padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: lightblue;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+/* Heading */
+.profile-container h2 {
     text-align: center;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Profile info layout */
+.background-profile-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Space between columns */
+    margin-bottom: 20px;
 }
 
 .profile-info {
-    font-size: 16px;
-    color: #555;
+    flex: 2; /* Name and email column takes more space */
 }
 
 .profile-info p {
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin: 8px 0;
+    color: #cccccc;
+}
+
+.profile-info strong {
+    color: ghostwhite;
 }
 
 .profile-picture {
-    margin-top: 20px;
+    flex: 1; /* Profile picture takes less space */
+    text-align: center;
 }
 
 .profile-img {
-    max-width: 200px;
-    max-height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    border: 3px solid #3498db;
 }
 
-.btn-edit-profile {
-    display: block;
-    margin-top: 30px;
-    background-color: #6db0f4;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 5px;
+/* Buttons */
+a {
     text-decoration: none;
 }
 
-.btn-edit-profile:hover {
-    background-color: #5e6b8e;
+.btn-edit-profile, .btn-delete-profile, .my-books-list, .my-wish-list, .my-reading-journal {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: #3498db;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-edit-profile:hover, .my-books-list:hover, .my-wish-list:hover, .my-reading-journal:hover {
+    background-color: #2980b9;
+}
+
+.btn-delete-profile {
+    background-color: #e74c3c;
+}
+
+.btn-delete-profile:hover {
+    background-color: #c0392b;
+}
+
+/* Link buttons */
+.my-books-list, .my-wish-list, .my-reading-journal {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #578a21;
+}
+
+.my-books-list:hover, .my-wish-list:hover, .my-reading-journal:hover {
+    background-color: #578a21;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-info p {
+        font-size: 14px;
+    }
+
+    .btn-edit-profile, .btn-delete-profile, .my-books-list, .my-wish-list, .my-reading-journal {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
 }

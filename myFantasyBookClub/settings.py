@@ -34,8 +34,11 @@ DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = []
 
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(',')
 
-# Application definition
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,12 +91,12 @@ WSGI_APPLICATION = 'myFantasyBookClub.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "fantasy_book_club",
-        "USER": "postgres-user",
-        "PASSWORD": "password",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "ENGINE": os.getenv('DATABASE_ENGINE', "django.db.backends.postgresql"),
+        "NAME": os.getenv('DATABASE_NAME'),
+        "USER": os.getenv('DATABASE_USER'),
+        "PASSWORD": os.getenv('DATABASE_PASSWORD'),
+        "HOST": os.getenv('DATABASE_HOST', 'localhost'),
+        "PORT": os.getenv('DATABASE_PORT', '5432'),
     }
 }
 

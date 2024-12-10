@@ -2,25 +2,32 @@
  
 {% block content %}
 <h1>My Books</h1>
-<a href="{% url 'add-book' %}" class="btn">Add Book</a>
-<ul>
+<a href="{% url 'add-book' %}" class="btn-add-book-to-list">Add Book</a>
+<ul class="ul-book-list-info">
     
     {% for book in books %}
-    <li>
-    
+    <li class="book-info-list">
+        <div class="book-list-book-cover">
+            <img src="{{ book.book.cover }}" alt="Book Cover">
+            
+        </div>
+        <div class="book-list-book-info">
         <strong>{{ book.book.title }}</strong><br>
         <em>{{ book.book.author }}</em><br>
-        <p>{{ book.book.description }}</p>
+        
         <p>{{ book.read_status }}</p>
-        <a href="{% url 'edit-book' book.book.pk %}" class="btn">Edit</a>
+        </div>   
+        
+        <a href="{% url 'details-book' book.book.pk %}" class="btn-details-book-from-list">Details</a>
+        <a href="{% url 'edit-book' book.book.pk %}" class="btn-edit-book-from-list">Edit</a>
         <form method="POST" action="{% url 'delete-book' book.book.pk %}" style="display:inline;">
             {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-book-delete">Delete</button>
         </form>
     </li>
         
     {% empty %}
-    <p>No books added yet.</p>
+    <p class="no-books">No books added yet.</p>
     {% endfor %}
     <a href="{% url 'profile-details' request.user.pk%}" class="btn-return-profile">Return to profile</a>
 </ul>
