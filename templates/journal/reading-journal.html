@@ -11,14 +11,14 @@
         {% for book in journals %}
         <li class="book-info-list">
             <div class="book-list-book-cover">
-            <img src="{{ ook.books_list.book.cover }}" alt="Book Cover">
+            <img src="{{ book.books_list.book.cover }}" alt="Book Cover">
             
             </div>
             <div class="book-list-book-info">
             <h2>{{ book.books_list.book.title }}</h2>
             <p><strong>Author:</strong> {{ book.books_list.book.author}}</p>
-            <a href="{% url 'journal-book-details' book.pk %}" class="btn-edit-book-from-list">View Journal</a>
-            <a href="{% url 'journal-book-delete' book.pk %}" class="btn btn-danger">Delete Book from Journal</a>
+            <a href="{% url 'journal-book-details' book.pk %}" class="btn-edit-book-from-list">Book Details</a>
+            <a href="{% url 'journal-book-delete' book.pk %}" class="btn btn-danger">Delete</a>
             </div>    
         </li>
         {% endfor %}
@@ -33,6 +33,7 @@
         {% csrf_token %}
 
 
-        <button type="submit" class="btn btn-primary mt-3">Add </button>
+        <button type="submit" class="button-add-book-to-journal">Add </button>
     </form>
+    <a href="{% url 'profile-details' request.user.pk%}" class="btn-return-profile">Return to profile</a>
 {% endblock %}

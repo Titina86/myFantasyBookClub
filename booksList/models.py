@@ -34,4 +34,4 @@ class BooksList(models.Model):
         return self.book.title
 
     class Meta:
-        unique_together = ('profile', 'book')  # За да няма дублирани записи за една и съща книга за един профил
+        unique_together = ('profile', 'book')

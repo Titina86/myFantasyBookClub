@@ -1,0 +1,56 @@
+.section-monthly-books {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.section-monthly-books h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.book-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /*flex-wrap: wrap; !* Ensures responsiveness on smaller screens *!*/
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Set width for each book card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline for links */
+    color: #333; /* Ensure consistent text color */
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book img {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.book h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.book p {
+    font-size: 14px;
+    color: #555;
+}

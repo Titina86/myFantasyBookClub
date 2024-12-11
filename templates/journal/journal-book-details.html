@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h1>Details for "{{ journal.books_list.book.title }}"</h1>
+    <h1>"{{ journal.books_list.book.title }}"</h1>
 
 <div class="journal-details">
     <div class="journal-book-details">
@@ -35,7 +35,8 @@
     </p>
     </div>
 </div>
-
+<div class="div-with-a-tags">
 <a href="{% url 'journal-book-edit' journal.pk %}"> Edit</a>
 <a href="{% url 'reading-journal' %}"> Back to My Journal</a>
+</div>    
 {% endblock %}

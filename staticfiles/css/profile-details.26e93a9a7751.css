@@ -1,0 +1,122 @@
+/* Profile container */
+
+.background-profile-details {
+    background-image: url("/static/images/profile-background.372b52f54c75.jpg");
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    height: 50vh; /* Full viewport height, adjust as needed */
+    width: 100%;
+}
+.profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #2c3e50;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.profile-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Profile info layout */
+.background-profile-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Space between columns */
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    flex: 2; /* Name and email column takes more space */
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #cccccc;
+}
+
+.profile-info strong {
+    color: ghostwhite;
+}
+
+.profile-picture {
+    flex: 1; /* Profile picture takes less space */
+    text-align: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+}
+
+.btn-edit-profile, .btn-delete-profile, .my-books-list, .my-wish-list, .my-reading-journal {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: lightslategray;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-edit-profile:hover, .my-books-list:hover, .my-wish-list:hover, .my-reading-journal:hover {
+    background-color: #5a6268;
+    text-decoration: none;
+}
+
+.btn-delete-profile {
+    background-color: #e74c3c;
+    text-decoration: none;
+}
+
+.btn-delete-profile:hover {
+    background-color: #c0392b;
+    text-decoration: none;
+}
+
+/* Link buttons */
+.my-books-list, .my-wish-list, .my-reading-journal {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #2c3e50;
+    text-decoration: none;
+}
+
+.my-books-list:hover, .my-wish-list:hover, .my-reading-journal:hover {
+    background-color: palevioletred;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-info p {
+        font-size: 14px;
+    }
+
+    .btn-edit-profile, .btn-delete-profile, .my-books-list, .my-wish-list, .my-reading-journal {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}

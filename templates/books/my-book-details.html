@@ -16,7 +16,7 @@
             <h3>Read Status: {{ book_list_entry.get_read_status_display }}</h3>
             <p><strong>Journal Entry:</strong> {% if book_list_entry.have_journal %} Yes {% else %} No {% endif %}</p>
            
-            <a href="{% url 'my-books' %}" class="btn btn-secondary">Back to My Books</a>
+            <a href="{% url 'my-books' %}" class="btn-back-from-details-book">Back to My Books</a>
         </div>
     </div>
     

@@ -27,7 +27,6 @@ class ReadingJournalAddForm(forms.ModelForm):
     def clean_book_title(self):
         book_title = self.cleaned_data['book_title']
 
-        # Намиране на книгата в списъка на потребителя
         try:
             book_entry = BooksList.objects.get(
                 profile=self.user.profile,

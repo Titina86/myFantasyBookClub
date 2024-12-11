@@ -1,0 +1,63 @@
+html {
+    font: 18px/1.5 Karla;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #cccccc;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.background {
+    background-image: url("/static/images/night.d3b97b156df5.jpg");
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 90vh; /* Full viewport height, adjust as needed */
+    width: 100%;
+
+    opacity: 1;
+}
+
+
+
+.banner-title{
+    font-family: Cormorant Infant;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.banner-p {
+    color: white;
+    width: 60ch;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 8em;
+}
+/*.section-header {*/
+/*    position: relative;*/
+/*}*/
+/*.section-header {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    padding: 2em 5em;*/
+/*}*/
+
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: auto;
+}
+
